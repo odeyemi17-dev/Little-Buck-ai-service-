@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+        h1 { text-align: center; }
+        #weather-display { margin-top: 20px; }
+        .error { color: red; }
+        .favorites { margin-top: 20px; }
+        .favorite-item { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Weather Dashboard</h1>
+    <div>
+        <input type="text" id="city-input" placeholder="Enter city name">
+        <button id="location-button">Get Weather</button>
+    </div>
+    <div id="error-container" class="error"></div>
+    <div id="weather-display">
+        <!-- Weather data will be displayed here -->
+    </div>
+    <div class="favorites">
+        <h2>Favorite Locations:</h2>
+        <div id="favorites-list">
+            <!-- Favorite locations will be displayed here -->
+        </div>
+    </div>
+    <script>
+        document.getElementById('location-button').addEventListener('click', function() {
+            const cityInput = document.getElementById('city-input').value;
+            if (!cityInput) {
+                document.getElementById('error-container').textContent = 'Please enter a city name.';
+                return;
+            }
+            // Fetch weather data (API call can go here)
+            // Update the weather display and favorites list accordingly.
+        });
+    </script>
+</body>
+</html>
